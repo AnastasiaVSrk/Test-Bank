@@ -9,6 +9,8 @@ from src.main.api.models.deposit_account_request import DepositAccountRequest
 from src.main.api.models.deposit_account_response import DepositAccountResponse
 from src.main.api.models.login_user_request import LoginUserRequest
 from src.main.api.models.login_user_response import LoginUserResponse
+from src.main.api.models.transfer_account_request import TransferAccountRequest
+from src.main.api.models.transfer_account_response import TransferAccountResponse
 
 
 @dataclass
@@ -22,7 +24,7 @@ class Endpoint(Enum):
     ADMIN_CREATE_USER = EndpointConfiguration(
         request_model=CreateUserRequest,
         url='/admin/create',
-        response_model= CreateUserResponse
+        response_model=CreateUserResponse
     )
 
     ADMIN_DELETE_USER = EndpointConfiguration(
@@ -34,17 +36,23 @@ class Endpoint(Enum):
     LOGIN_USER = EndpointConfiguration(
         request_model=LoginUserRequest,
         url='/auth/token/login',
-        response_model= LoginUserResponse
+        response_model=LoginUserResponse
     )
 
     CREATE_ACCOUNT = EndpointConfiguration(
         request_model=None,
         url='/account/create',
-        response_model= CreateAccountResponse
+        response_model=CreateAccountResponse
     )
 
     DEPOSIT_ACCOUNT = EndpointConfiguration(
         request_model=DepositAccountRequest,
         url='/account/deposit',
-        response_model= DepositAccountResponse
+        response_model=DepositAccountResponse
+    )
+
+    TRANSFER_ACCOUNT = EndpointConfiguration(
+        request_model=TransferAccountRequest,
+        url='/account/transfer',
+        response_model=TransferAccountResponse
     )
