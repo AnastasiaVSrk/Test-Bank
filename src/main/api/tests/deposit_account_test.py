@@ -1,6 +1,4 @@
 import pytest
-
-from src.main.api.fixtures.api_fixture import api_manager
 from src.main.api.models.deposit_account_request import DepositAccountRequest
 
 

@@ -9,6 +9,10 @@ from src.main.api.models.deposit_account_request import DepositAccountRequest
 from src.main.api.models.deposit_account_response import DepositAccountResponse
 from src.main.api.models.login_user_request import LoginUserRequest
 from src.main.api.models.login_user_response import LoginUserResponse
+from src.main.api.models.receiving_credit_request import ReceivingCreditRequest
+from src.main.api.models.receiving_credit_response import ReceivingCreditResponse
+from src.main.api.models.repay_credit_request import RepayCreditRequest
+from src.main.api.models.repay_credit_response import RepayCreditResponse
 from src.main.api.models.transfer_account_request import TransferAccountRequest
 from src.main.api.models.transfer_account_response import TransferAccountResponse
 
@@ -55,4 +59,16 @@ class Endpoint(Enum):
         request_model=TransferAccountRequest,
         url='/account/transfer',
         response_model=TransferAccountResponse
+    )
+
+    RECEIVING_CREDIT = EndpointConfiguration(
+        request_model=ReceivingCreditRequest,
+        url='/credit/request',
+        response_model=ReceivingCreditResponse
+    )
+
+    REPAY_CREDIT = EndpointConfiguration(
+        request_model=RepayCreditRequest,
+        url='/credit/repay',
+        response_model=RepayCreditResponse
     )
